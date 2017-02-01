@@ -8,5 +8,5 @@ app.get('/', function(req, res) {
 
 app.use(express.static('dist'))
 
-
 app.listen(8080);
+console.log('server listening at 8080');
