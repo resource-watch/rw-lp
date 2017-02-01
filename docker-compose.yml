@@ -1,0 +1,9 @@
+prod:
+  image: vizzuality/rw-lp:0.0.1${STAGING}
+  ports:
+    - "8080"
+  env_file:
+    - prod.env
+  command: start
+  dns: ${DNS_SERVER}
+  restart: always

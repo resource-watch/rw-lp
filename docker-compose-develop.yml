@@ -1,0 +1,7 @@
+develop:
+  build: .
+  ports:
+    - "8080:8080"
+  container_name: rw-lp
+  command: start
+  restart: always
