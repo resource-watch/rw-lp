@@ -1,5 +1,6 @@
 node_modules
 dist
+docs
 .tmp
 bower_components
 test/bower_components

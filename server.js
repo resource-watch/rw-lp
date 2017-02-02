@@ -6,7 +6,11 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
-app.use(express.static('dist'))
+app.get('/info', function(req, res){
+    res.sendFile(path.join(__dirname + '/microservice/register.json'));
+});
+
+app.use(express.static('dist'));
 
 app.listen(8080);
 console.log('server listening at 8080');
