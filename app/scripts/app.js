@@ -2,9 +2,8 @@
     'use strict';
 
     angular.module('app', []);
-
-    angular.module('app').controller('StatusController', StatusController);
-    angular.module('app').controller('PerformanceController', PerformanceController);
+    angular.module('app').controller('StatusController', ['$http', StatusController]);
+    angular.module('app').controller('PerformanceController', ['$http', PerformanceController]);
 
     function StatusController($http) {
         var vm = this;
