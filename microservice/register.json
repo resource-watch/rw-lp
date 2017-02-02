@@ -1,0 +1,82 @@
+{
+	"name": "rw-lp",
+	"endpoints": [{
+		"path": "/",
+		"method": "GET",
+		"binary": true,
+		"redirect": {
+			"method": "GET",
+			"path": "/"
+		}
+	},
+    {
+		"path": "/*.js",
+		"method": "GET",
+		"binary": true,
+		"redirect": {
+			"method": "GET",
+            "path": "/*.js"
+		}
+	},{
+		"path": "/*.css",
+		"method": "GET",
+		"binary": true,
+		"redirect": {
+			"method": "GET",
+			"path": "/*.css"
+		}
+	},{
+		"path": "/*.png",
+		"method": "GET",
+		"binary": true,
+		"redirect": {
+			"method": "GET",
+			"path": "/*.png"
+		}
+	},
+    {
+        "path": "/*.jpg",
+        "method": "GET",
+        "binary": true,
+        "redirect": {
+            "method": "GET",
+            "path": "/*.jpg"
+        }
+    },
+    {
+        "path": "/*.svg",
+        "method": "GET",
+        "binary": true,
+        "redirect": {
+            "method": "GET",
+            "path": "/*.svg"
+        }
+    },
+    {
+        "path": "/*.ico",
+        "method": "GET",
+        "binary": true,
+        "redirect": {
+            "method": "GET",
+            "path": "/*.ico"
+        }
+    },
+    {
+        "path": "/*.txt",
+        "method": "GET",
+        "binary": true,
+        "redirect": {
+            "method": "GET",
+            "path": "/*.txt"
+        }
+    },
+    {
+        "path": "/*.json",
+        "method": "GET",
+        "binary": true,
+        "redirect": {
+            "method": "GET",
+            "path": "/*.json"
+        }
+    }]
+}

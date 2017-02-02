@@ -18,6 +18,7 @@ RUN cd /opt/$NAME && npm install
 RUN cd /opt/$NAME && bower install --allow-root
 
 COPY ./app /opt/$NAME/app
+COPY ./microservice /opt/$NAME/microservice
 
 COPY gulpfile.js /opt/$NAME/gulpfile.js
 COPY server.js /opt/$NAME/server.js
