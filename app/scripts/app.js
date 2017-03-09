@@ -12,7 +12,7 @@
 
         $http({
             method: 'GET',
-            url: 'http://production-api.globalforestwatch.org/api/v1/microservice/status'
+            url: '//production-api.globalforestwatch.org/api/v1/microservice/status?'+Date.now()
             }).then(function successCallback(response) {
                 vm.status = response.data;
                 // this callback will be called asynchronously
@@ -31,7 +31,7 @@
 
         $http({
             method: 'GET',
-            url: 'http://staging-api.globalforestwatch.org/api/v1/stadistic/avgByRequest'
+            url: '//production-api.globalforestwatch.org/api/v1/stadistic/avgByRequest?'+Date.now()
             }).then(function successCallback(response) {
                 vm.statistics = response.data;
                 // this callback will be called asynchronously
