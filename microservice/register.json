@@ -1,7 +1,7 @@
 {
 	"name": "rw-lp",
 	"endpoints": [{
-		"path": "/",
+		"path": "/v1/",
 		"method": "GET",
 		"binary": true,
 		"redirect": {
@@ -10,7 +10,7 @@
 		}
 	},
     {
-		"path": "/*.js",
+		"path": "/v1/*.js",
 		"method": "GET",
 		"binary": true,
 		"redirect": {
@@ -18,7 +18,7 @@
             "path": "/*.js"
 		}
 	},{
-		"path": "/*.css",
+		"path": "/v1/*.css",
 		"method": "GET",
 		"binary": true,
 		"redirect": {
@@ -26,7 +26,7 @@
 			"path": "/*.css"
 		}
 	},{
-		"path": "/*.png",
+		"path": "/v1/*.png",
 		"method": "GET",
 		"binary": true,
 		"redirect": {
@@ -35,7 +35,7 @@
 		}
 	},
     {
-        "path": "/*.jpg",
+        "path": "/v1/*.jpg",
         "method": "GET",
         "binary": true,
         "redirect": {
@@ -44,7 +44,7 @@
         }
     },
     {
-        "path": "/*.svg",
+        "path": "/v1/*.svg",
         "method": "GET",
         "binary": true,
         "redirect": {
@@ -53,7 +53,7 @@
         }
     },
     {
-        "path": "/*.ico",
+        "path": "/v1/*.ico",
         "method": "GET",
         "binary": true,
         "redirect": {
@@ -62,7 +62,7 @@
         }
     },
     {
-        "path": "/*.txt",
+        "path": "/v1/*.txt",
         "method": "GET",
         "binary": true,
         "redirect": {
@@ -71,7 +71,7 @@
         }
     },
     {
-        "path": "/*.json",
+        "path": "/v1/*.json",
         "method": "GET",
         "binary": true,
         "redirect": {

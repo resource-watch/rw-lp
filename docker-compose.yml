@@ -1,5 +1,5 @@
 prod:
-  image: vizzuality/rw-lp:0.0.1${STAGING}
+  image: vizzuality/rw-lp:1.0.0${STAGING}
   ports:
     - "8080"
   env_file:
