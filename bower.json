@@ -5,7 +5,7 @@
     "bootstrap": "~3.3.5",
     "modernizr": "~2.8.1",
     "bootstrap-material-design": "0.5.10",
-    "headroom.js": "https://unpkg.com/headroom.js/bower.zip",
+    "headroom.js": "0.9.3",
     "angular": "1.6.1"
   },
   "overrides": {
