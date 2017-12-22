@@ -10,6 +10,10 @@ app.get('/info', function(req, res){
     res.sendFile(path.join(__dirname + '/microservice/register.json'));
 });
 
+app.get('/ping', function(req, res){
+    res.sendStatus(200);
+});
+
 app.use(express.static('dist'));
 
 app.listen(8080);

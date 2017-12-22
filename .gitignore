@@ -5,3 +5,4 @@ docs
 bower_components
 test/bower_components
 *.zip
+.DS_Store
