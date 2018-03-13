@@ -1,4 +1,3 @@
-// generated on 2016-09-25 using generator-webapp 2.1.0
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync');
@@ -9,7 +8,7 @@ const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 gulp.task('styles', () => {
-  return gulp.src('app/styles/*.css')
+  return gulp.src('app/rw-lp/styles/*.css')
     .pipe($.sourcemaps.init())
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
@@ -18,7 +17,7 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src('app/rw-lp/scripts/**/*.js')
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.babel())
@@ -36,10 +35,10 @@ function lint(files, options) {
 }
 
 gulp.task('lint', () => {
-  return lint('app/scripts/**/*.js', {
+  return lint('app/rw-lp/scripts/**/*.js', {
     fix: true
   })
-    .pipe(gulp.dest('app/scripts'));
+    .pipe(gulp.dest('app/rw-lp/scripts'));
 });
 gulp.task('lint:test', () => {
   return lint('test/spec/**/*.js', {
@@ -60,31 +59,19 @@ gulp.task('html', ['styles', 'scripts'], () => {
     .pipe(gulp.dest('dist'));
 });
 
-// gulp.task('images', () => {
-//   return gulp.src('app/images/**/*')
-//     .pipe($.cache($.imagemin({
-//       progressive: true,
-//       interlaced: true,
-//       // don't remove IDs from SVGs, they are often used
-//       // as hooks for embedding and styling
-//       svgoPlugins: [{cleanupIDs: false}]
-//     })))
-//     .pipe(gulp.dest('dist/images'));
-// });
-
 gulp.task('images', () => {
   return gulp.src([
-    'app/images/*'
+    'app/rw-lp/images/*'
   ], {
     dot: true
-}).pipe(gulp.dest('dist/images'));
+}).pipe(gulp.dest('dist/rw-lp/images'));
 });
 
 gulp.task('fonts', () => {
   return gulp.src(require('main-bower-files')('**/*.{eot,svg,ttf,woff,woff2}', function (err) {})
     .concat('app/fonts/**/*'))
     .pipe(gulp.dest('.tmp/fonts'))
-    .pipe(gulp.dest('dist/fonts'));
+    .pipe(gulp.dest('dist/rw-lp/fonts'));
 });
 
 gulp.task('extras', () => {
@@ -120,13 +107,13 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
 
   gulp.watch([
     'app/*.html',
-    'app/images/**/*',
+    'app/rw-lp/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
-  gulp.watch('app/styles/**/*.css', ['styles']);
-  gulp.watch('app/scripts/**/*.js', ['scripts']);
-  gulp.watch('app/fonts/**/*', ['fonts']);
+  gulp.watch('app/rw-lp/styles/**/*.css', ['styles']);
+  gulp.watch('app/rw-lp/scripts/**/*.js', ['scripts']);
+  gulp.watch('app/rw-lp/fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });
 
@@ -154,7 +141,7 @@ gulp.task('serve:test', ['scripts'], () => {
     }
   });
 
-  gulp.watch('app/scripts/**/*.js', ['scripts']);
+  gulp.watch('app/rw-lp/scripts/**/*.js', ['scripts']);
   gulp.watch('test/spec/**/*.js').on('change', reload);
   gulp.watch('test/spec/**/*.js', ['lint:test']);
 });
