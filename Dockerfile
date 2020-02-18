@@ -1,4 +1,5 @@
-FROM mhart/alpine-node:6.2
+FROM node:11-alpine
+MAINTAINER info@vizzuality.com
 
 ENV NAME rw-lp
 ENV USER microservice
@@ -7,14 +8,15 @@ RUN apk update && apk upgrade && apk add --no-cache --update bash git
 
 RUN addgroup $USER && adduser -s /bin/bash -D -G $USER $USER
 
-RUN npm install -g bower gulp pm2
+RUN yarn global add bower gulp pm2
 
 RUN mkdir -p /opt/$NAME
 
 COPY package.json /opt/$NAME/package.json
+COPY yarn.lock /opt/$NAME/yarn.lock
 COPY bower.json /opt/$NAME/bower.json
 
-RUN cd /opt/$NAME && npm install
+RUN cd /opt/$NAME && yarn
 RUN cd /opt/$NAME && bower install --allow-root
 
 COPY ./app /opt/$NAME/app
@@ -27,7 +29,7 @@ COPY entrypoint.sh /opt/$NAME/entrypoint.sh
 WORKDIR /opt/$NAME
 RUN gulp build
 
-RUN chown $USER:$USER /opt/$NAME
+RUN chown -R $USER:$USER /opt/$NAME
 
 # Tell Docker we are going to use this ports
 EXPOSE 8080

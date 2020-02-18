@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    name: {name}
-  name: {name}
+    name: rw-lp
+  name: rw-lp
 spec:
   ports:
     - port: 8080
   selector:
-    name: {name}
+    name: rw-lp

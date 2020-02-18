@@ -2,9 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    name: {name}
+    name: rw-lp
     app: rw
-  name: {name}
+  name: rw-lp
 spec:
   revisionHistoryLimit: 2
   template:
@@ -12,11 +12,11 @@ spec:
       annotations:
         chaos.alpha.kubernetes.io/enabled: "true"
       labels:
-        name: {name}
+        name: rw-lp
     spec:
       containers:
-      - name: {name}
-        image: vizzuality/{name}
+      - name: rw-lp
+        image: vizzuality/rw-lp
         imagePullPolicy: Always
         resources:
           limits:
