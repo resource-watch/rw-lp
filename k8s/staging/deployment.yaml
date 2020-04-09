@@ -2,14 +2,14 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    name: {name}
-  name: {name}
+    name: rw-lp
+  name: rw-lp
 spec:
   revisionHistoryLimit: 0
   template:
     metadata:
       labels:
-        name: {name}
+        name: rw-lp
     spec:
       affinity:
         nodeAffinity:
@@ -21,16 +21,36 @@ spec:
                     values:
                       - apps
       containers:
-      - name: {name}
-        image: vizzuality/{name}
+      - name: rw-lp
+        image: vizzuality/rw-lp
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "0Mi"
-            cpu: "0m"
+            cpu: "0.1"
+            memory: "128M"
+          limits:
+            cpu: "0.5"
+            memory: "256M"
         args:
           - start
         ports:
           - containerPort: 8080
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /
+            port: 8080
+          failureThreshold: 3
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+          periodSeconds: 15
 
       restartPolicy: Always

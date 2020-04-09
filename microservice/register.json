@@ -10,73 +10,73 @@
 		}
 	},
     {
-		"path": "/v1/*.js",
+		"path": "/v1/rw-lp/*.js",
 		"method": "GET",
 		"binary": true,
 		"redirect": {
 			"method": "GET",
-            "path": "/*.js"
+            "path": "/rw-lp/*.js"
 		}
 	},{
-		"path": "/v1/*.css",
+		"path": "/v1/rw-lp/*.css",
 		"method": "GET",
 		"binary": true,
 		"redirect": {
 			"method": "GET",
-			"path": "/*.css"
+			"path": "/rw-lp/*.css"
 		}
 	},{
-		"path": "/v1/*.png",
+		"path": "/v1/rw-lp/*.png",
 		"method": "GET",
 		"binary": true,
 		"redirect": {
 			"method": "GET",
-			"path": "/*.png"
+			"path": "/rw-lp/*.png"
 		}
 	},
     {
-        "path": "/v1/*.jpg",
+        "path": "/v1/rw-lp/*.jpg",
         "method": "GET",
         "binary": true,
         "redirect": {
             "method": "GET",
-            "path": "/*.jpg"
+            "path": "/rw-lp/*.jpg"
         }
     },
     {
-        "path": "/v1/*.svg",
+        "path": "/v1/rw-lp/*.svg",
         "method": "GET",
         "binary": true,
         "redirect": {
             "method": "GET",
-            "path": "/*.svg"
+            "path": "/rw-lp/*.svg"
         }
     },
     {
-        "path": "/v1/*.ico",
+        "path": "/v1/rw-lp/*.ico",
         "method": "GET",
         "binary": true,
         "redirect": {
             "method": "GET",
-            "path": "/*.ico"
+            "path": "/rw-lp/*.ico"
         }
     },
     {
-        "path": "/v1/*.txt",
+        "path": "/v1/rw-lp/*.txt",
         "method": "GET",
         "binary": true,
         "redirect": {
             "method": "GET",
-            "path": "/*.txt"
+            "path": "/rw-lp/*.txt"
         }
     },
     {
-        "path": "/v1/*.json",
+        "path": "/v1/rw-lp/*.json",
         "method": "GET",
         "binary": true,
         "redirect": {
             "method": "GET",
-            "path": "/*.json"
+            "path": "/rw-lp/*.json"
         }
     }]
 }
