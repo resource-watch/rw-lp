@@ -1,6 +1,7 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+const express = require('express');
+const app = express();
+const path = require('path');
+const ctRegisterMicroservice = require('ct-register-microservice-node');
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/index.html'));
@@ -16,5 +17,21 @@ app.get('/ping', function(req, res){
 
 app.use(express.static('dist'));
 
-app.listen(8080);
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  ctRegisterMicroservice.register({
+    info: require('./microservice/register.json'),
+    mode: ctRegisterMicroservice.MODE_AUTOREGISTER,
+    name: 'rw-lp',
+    ctUrl: process.env.CT_URL,
+    url: process.env.LOCAL_URL,
+    token: process.env.CT_TOKEN,
+    active: true,
+  }).then(
+    () => { console.log('Success connecting to CT!') },
+    (err) => { console.error(err); process.exit(1);
+  });
+});
+
 console.log('server listening at 8080');

@@ -1,82 +1,117 @@
 {
-	"name": "rw-lp",
-	"endpoints": [{
-		"path": "/v1/",
-		"method": "GET",
-		"binary": true,
-		"redirect": {
-			"method": "GET",
-			"path": "/"
-		}
-	},
+  "id": "#(service.id)",
+  "name": "#(service.name)",
+  "tags": [
+    "rw"
+  ],
+  "urls": [
     {
-		"path": "/v1/rw-lp/*.js",
-		"method": "GET",
-		"binary": true,
-		"redirect": {
-			"method": "GET",
-            "path": "/rw-lp/*.js"
-		}
-	},{
-		"path": "/v1/rw-lp/*.css",
-		"method": "GET",
-		"binary": true,
-		"redirect": {
-			"method": "GET",
-			"path": "/rw-lp/*.css"
-		}
-	},{
-		"path": "/v1/rw-lp/*.png",
-		"method": "GET",
-		"binary": true,
-		"redirect": {
-			"method": "GET",
-			"path": "/rw-lp/*.png"
-		}
-	},
-    {
-        "path": "/v1/rw-lp/*.jpg",
-        "method": "GET",
-        "binary": true,
-        "redirect": {
-            "method": "GET",
-            "path": "/rw-lp/*.jpg"
+      "url": "/v1/",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/"
         }
+      ]
     },
     {
-        "path": "/v1/rw-lp/*.svg",
-        "method": "GET",
-        "binary": true,
-        "redirect": {
-            "method": "GET",
-            "path": "/rw-lp/*.svg"
+      "url": "/v1/*.js",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.js"
         }
+      ]
     },
     {
-        "path": "/v1/rw-lp/*.ico",
-        "method": "GET",
-        "binary": true,
-        "redirect": {
-            "method": "GET",
-            "path": "/rw-lp/*.ico"
+      "url": "/v1/*.css",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.css"
         }
+      ]
     },
     {
-        "path": "/v1/rw-lp/*.txt",
-        "method": "GET",
-        "binary": true,
-        "redirect": {
-            "method": "GET",
-            "path": "/rw-lp/*.txt"
+      "url": "/v1/*.png",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.png"
         }
+      ]
     },
     {
-        "path": "/v1/rw-lp/*.json",
-        "method": "GET",
-        "binary": true,
-        "redirect": {
-            "method": "GET",
-            "path": "/rw-lp/*.json"
+      "url": "/v1/*.jpg",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.jpg"
         }
-    }]
+      ]
+    },
+    {
+      "url": "/v1/*.svg",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.svg"
+        }
+      ]
+    },
+    {
+      "url": "/v1/*.ico",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.ico"
+        }
+      ]
+    },
+    {
+      "url": "/v1/*.txt",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.txt"
+        }
+      ]
+    },
+    {
+      "url": "/v1/*.json",
+      "authenticated": false,
+      "method": "GET",
+      "endpoints": [
+        {
+          "method": "GET",
+          "baseUrl": "#(service.uri)",
+          "path": "/rw-lp/*.json"
+        }
+      ]
+    }
+  ]
 }
