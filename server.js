@@ -24,7 +24,7 @@ app.use(express.static('dist'));
 
 const port = process.env.PORT || 8080;
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   ctRegisterMicroservice.register({
     info: require('./microservice/register.json'),
     mode: ctRegisterMicroservice.MODE_AUTOREGISTER,
@@ -40,3 +40,5 @@ app.listen(port, () => {
 });
 
 console.log('server listening at 8080');
+
+module.exports = server;

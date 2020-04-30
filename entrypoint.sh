@@ -6,6 +6,10 @@ case "$1" in
         echo "Running Start"
         exec node server.js
         ;;
+    test)
+        echo "Running Test"
+        exec yarn test
+        ;;
     *)
         exec "$@"
 esac
