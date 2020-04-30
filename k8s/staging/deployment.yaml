@@ -21,51 +21,51 @@ spec:
                     values:
                       - apps
       containers:
-      - name: rw-lp
-        image: vizzuality/rw-lp
-        imagePullPolicy: Always
-        resources:
-          requests:
-            cpu: "0.1"
-            memory: "128M"
-          limits:
-            cpu: "0.5"
-            memory: "256M"
-        args:
-          - start
-        env:
-          - name: PORT
-            value: "8080"
-          - name: LOCAL_URL
-            value: http://rw-lp.gfw.svc.cluster.local:8080
-          - name: CT_URL
-            valueFrom:
-              secretKeyRef:
-                name: mssecrets
-                key: CT_URL
-          - name: CT_TOKEN
-            valueFrom:
-              secretKeyRef:
-                name: mssecrets
-                key: CT_TOKEN
-        ports:
-          - containerPort: 8080
-        readinessProbe:
-          httpGet:
-            scheme: HTTP
-            path: /
-            port: 8080
-          initialDelaySeconds: 30
-          timeoutSeconds: 5
-          periodSeconds: 15
-        livenessProbe:
-          httpGet:
-            scheme: HTTP
-            path: /
-            port: 8080
-          failureThreshold: 3
-          initialDelaySeconds: 30
-          timeoutSeconds: 5
-          periodSeconds: 15
+        - name: rw-lp
+          image: vizzuality/rw-lp
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: "0.1"
+              memory: "128M"
+            limits:
+              cpu: "0.5"
+              memory: "256M"
+          args:
+            - start
+          env:
+            - name: PORT
+              value: "8080"
+            - name: LOCAL_URL
+              value: http://rw-lp.core.svc.cluster.local:8080
+            - name: CT_URL
+              valueFrom:
+                secretKeyRef:
+                  name: mssecrets
+                  key: CT_URL
+            - name: CT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: mssecrets
+                  key: CT_TOKEN
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /
+              port: 8080
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+            periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              scheme: HTTP
+              path: /
+              port: 8080
+            failureThreshold: 3
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+            periodSeconds: 15
 
       restartPolicy: Always

@@ -46,6 +46,8 @@
   },
   "dependencies": {
     "ct-register-microservice-node": "^2.1.7",
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "express-healthcheck": "^0.1.0",
+    "express-simple-logger": "^1.1.2"
   }
 }

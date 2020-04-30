@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const ctRegisterMicroservice = require('ct-register-microservice-node');
+const logger = require('express-simple-logger')
+const expressHealthcheck = require('express-healthcheck');
+
+app.use(logger());
+app.use('/healthcheck', expressHealthcheck());
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/index.html'));
