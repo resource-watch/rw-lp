@@ -25,7 +25,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.js"
+          "path": "/rw-lp/*.js"
         }
       ]
     },
@@ -37,7 +37,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.css"
+          "path": "/rw-lp/*.css"
         }
       ]
     },
@@ -49,7 +49,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.png"
+          "path": "/rw-lp/*.png"
         }
       ]
     },
@@ -61,7 +61,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.jpg"
+          "path": "/rw-lp/*.jpg"
         }
       ]
     },
@@ -73,7 +73,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.svg"
+          "path": "/rw-lp/*.svg"
         }
       ]
     },
@@ -85,7 +85,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.ico"
+          "path": "/rw-lp/*.ico"
         }
       ]
     },
@@ -97,7 +97,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.txt"
+          "path": "/rw-lp/*.txt"
         }
       ]
     },
@@ -109,7 +109,7 @@
         {
           "method": "GET",
           "baseUrl": "#(service.uri)",
-          "path": "/*.json"
+          "path": "/rw-lp/*.json"
         }
       ]
     }
