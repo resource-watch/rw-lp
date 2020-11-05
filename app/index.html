@@ -22,14 +22,14 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Planet's signals together | Resource Watch API" />
     <meta property="og:description" content="Planet's signals together | Resource Watch API" />
-    <meta property="og:image" content="http://staging-api.globalforestwatch.org/rw-lp/images/earth.jpg" />
+    <meta property="og:image" content="https://api.resourcewatch.org/rw-lp/images/earth.jpg" />
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="https://api.resourcewatch.org">
     <meta name="twitter:creator" content="Vizzuality">
     <meta name="twitter:title" content="Planet's signals together | Resource Watch API" />
     <meta name="twitter:description" content="Planet's signals together | Resource Watch API" />
-    <meta name="twitter:image" content="http://staging-api.globalforestwatch.org/rw-lp/images/earth.jpg" />
+    <meta name="twitter:image" content="https://api.resourcewatch.org/rw-lp/images/earth.jpg" />
 
     <!-- build:css rw-lp/styles/vendor.css -->
     <!-- bower:css -->
@@ -117,9 +117,9 @@
                 <div class="col-sm-5">
                   <div class="content">
                     <h3 class="title">Several sources_ Same interface_</h3>
-                    <p class="body">It doesn’t matter if the data is in CARTO, CSV, ArcGIS, JSON, or GEE format because we’ve used SQL and feature service, both standard languages, to query the data and reveal the information that is sought. Whatever system you use, you’ll be able to use it, avoiding any lengthy and difficult discussions about standards and compatibility. We’ve done the hard work so you don’t have to.</p>
-                    <a class="btn btn-lg btn-raised bg-pink color-white" href="https://api.resourcewatch.org/documentation/">Swagger Docs</a>
+                    <p class="body">It doesn’t matter if the data is in CARTO, CSV, ArcGIS, JSON, or GEE. We use SQL to query the data and reveal the information that is sought, no matter where it's stored. Whatever system you use, you’ll be able to use it, avoiding any lengthy and difficult discussions about standards and compatibility. We’ve done the hard work so you don’t have to.</p>
                     <a class="btn btn-lg btn-raised bg-pink color-white" href="https://resource-watch.github.io/doc-api/">API Docs</a>
+                    <a class="btn btn-lg btn-raised bg-pink color-white" href="https://resource-watch.github.io/doc-api/tutorials.html">Tutorials</a>
                   </div>
                 </div>
                 <div class="col-sm-6 col-sm-offset-1">
@@ -138,8 +138,8 @@
                 <div class="col-sm-5 col-sm-offset-1">
                   <div class="content">
                     <h3 class="title">Production_ Ready_</h3>
-                    <p class="body">In case you want to upload your own data to the platform you can request us to create your own user. However all data is actually available to use in any application or research project.</p>
-                    <a class="btn btn-lg btn-raised bg-pink color-white" href="http://api.resourcewatch.org:82/">Go to the console</a>
+                    <p class="body">Want to host your own data on the RW API? No problem! Simply sign up for a free account, and you can upload your own data, to power your own application and share it with the world.</p>
+                    <a class="btn btn-lg btn-raised bg-pink color-white" href="https://api.resourcewatch.org/auth/login">Login or Register</a>
                   </div>
                 </div>
             </div>
@@ -199,38 +199,6 @@
     </section>
     <!-- status -->
 
-    <!-- time -->
-    <section id="status" class="section bg-white" ng-controller="PerformanceController as PerformanceVM">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                  <div class="content">
-                    <h3 class="title">Most requested Endpoints Performance</h3>
-                    <h3 ng-hide="PerformanceVM.statistics">Loading ...</h3>
-                    <table class="table table-striped table-hover" ng-show="PerformanceVM.statistics">
-                      <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Endpoint</th>
-                            <th>Avg Response Time</th>
-                          </tr>
-                          </thead>
-                      <tbody>
-                          <tr ng-repeat="item in PerformanceVM.statistics | orderBy: '-count' | limitTo: 10 track by $index">
-                            <td>{{1+$index}}</td>
-                            <td>{{item._id.sourceMethod}}: {{item._id.endpointPath}}</td>
-                            <td>{{item.sum.toFixed(2)}} ms</td>
-                            <td>
-                          </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- time -->
-
     <!-- hero -->
     <section id="docs" class="section hero color-white">
       <div class="container">
@@ -256,7 +224,7 @@
 
     <footer>
         <div class="container">
-            <p>Resource Watch 2017</p>
+            <p>Resource Watch 2020</p>
             <!--<p class="small">All trademarks, service marks, trade names, trade dress, product names and logos appearing on the site are the property of their respective owners.</p>-->
         </div>
     </footer>

@@ -18,7 +18,7 @@
       ]
     },
     {
-      "url": "/v1/*.js",
+      "url": "/v1/rw-lp/*.js",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "url": "/v1/*.css",
+      "url": "/v1/rw-lp/*.css",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "url": "/v1/*.png",
+      "url": "/v1/rw-lp/*.png",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
@@ -54,7 +54,7 @@
       ]
     },
     {
-      "url": "/v1/*.jpg",
+      "url": "/v1/rw-lp/*.jpg",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "url": "/v1/*.svg",
+      "url": "/v1/rw-lp/*.svg",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "url": "/v1/*.ico",
+      "url": "/v1/rw-lp/*.ico",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
@@ -90,7 +90,7 @@
       ]
     },
     {
-      "url": "/v1/*.txt",
+      "url": "/v1/rw-lp/*.txt",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
@@ -102,7 +102,7 @@
       ]
     },
     {
-      "url": "/v1/*.json",
+      "url": "/v1/rw-lp/*.json",
       "authenticated": false,
       "method": "GET",
       "endpoints": [
