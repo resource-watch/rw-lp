@@ -4,8 +4,8 @@
   "dependencies": {
     "bootstrap": "~3.3.5",
     "modernizr": "~2.8.1",
-    "bootstrap-material-design": "0.5.10",
-    "angular": "1.6.1"
+    "angular": "1.6.1",
+    "bootstrap-material-design": "git@github.com:mdbootstrap/bootstrap-material-design.git#v0.5.10"
   },
   "overrides": {
     "bootstrap": {
