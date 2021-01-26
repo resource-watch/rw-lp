@@ -2,10 +2,27 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const { RWAPIMicroservice } = require('rw-api-microservice-node');
-const logger = require('./logger');
 
 const expressLogger = require('express-simple-logger')
 const expressHealthcheck = require('express-healthcheck');
+const bunyan = require('bunyan');
+
+const streams = [
+  {
+    stream: process.stdout,
+    level: process.env.LOGGER_LEVEL || 'debug'
+  }, {
+    stream: process.stderr,
+    level: 'warn'
+  },
+];
+
+
+const logger = bunyan.createLogger({
+  name: 'rw-lp',
+  src: true,
+  streams,
+});
 
 app.use(expressLogger());
 app.use('/healthcheck', expressHealthcheck());

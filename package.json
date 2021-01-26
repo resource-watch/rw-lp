@@ -5,8 +5,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "NODE_PATH=app/src node ./node_modules/.bin/grunt e2eTest",
-    "coverage": "NODE_PATH=app/src node ./node_modules/.bin/grunt nyc"
+    "test": "node ./node_modules/.bin/grunt e2eTest",
+    "coverage": "node ./node_modules/.bin/grunt nyc"
   },
   "eslintConfig": {
     "env": {
