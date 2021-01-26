@@ -22,10 +22,11 @@
     }
   },
   "dependencies": {
-    "ct-register-microservice-node": "^2.1.7",
+    "bunyan": "^1.8.15",
     "express": "^4.14.1",
     "express-healthcheck": "^0.1.0",
-    "express-simple-logger": "^1.1.2"
+    "express-simple-logger": "^1.1.2",
+    "rw-api-microservice-node": "^3.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
