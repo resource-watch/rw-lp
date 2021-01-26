@@ -1,3 +1,8 @@
+## 26/01/2021
+
+- Update dependency url following deprecation of the old one.
+- Replace CT integration library
+
 # v1.0.0
 
 ## 09/04/2020

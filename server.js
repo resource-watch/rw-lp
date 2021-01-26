@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const ctRegisterMicroservice = require('ct-register-microservice-node');
-const logger = require('express-simple-logger')
+const { RWAPIMicroservice } = require('rw-api-microservice-node');
+const logger = require('./logger');
+
+const expressLogger = require('express-simple-logger')
 const expressHealthcheck = require('express-healthcheck');
 
-app.use(logger());
+app.use(expressLogger());
 app.use('/healthcheck', expressHealthcheck());
 
 app.get('/', function(req, res) {
@@ -22,21 +24,30 @@ app.get('/ping', function(req, res){
 
 app.use(express.static('dist'));
 
+app.use(RWAPIMicroservice.bootstrap({
+  name: 'rw-lp',
+  info: require('./microservice/register.json'),
+  swagger: require('./microservice/public-swagger.json'),
+  logger,
+  baseURL: process.env.CT_URL,
+  url: process.env.LOCAL_URL,
+  token: process.env.CT_TOKEN,
+  fastlyEnabled: process.env.FASTLY_ENABLED,
+  fastlyServiceId: process.env.FASTLY_SERVICEID,
+  fastlyAPIKey: process.env.FASTLY_APIKEY
+}));
+
 const port = process.env.PORT || 8080;
 
 const server = app.listen(port, () => {
-  ctRegisterMicroservice.register({
-    info: require('./microservice/register.json'),
-    mode: ctRegisterMicroservice.MODE_AUTOREGISTER,
-    name: 'rw-lp',
-    ctUrl: process.env.CT_URL,
-    url: process.env.LOCAL_URL,
-    token: process.env.CT_TOKEN,
-    active: true,
-  }).then(
-    () => { console.log('Success connecting to CT!') },
-    (err) => { console.error(err); process.exit(1);
-  });
+  if (process.env.CT_REGISTER_MODE === 'auto') {
+    RWAPIMicroservice.register().then(() => {
+      logger.info('CT registration process started');
+    }, (error) => {
+      logger.error(error);
+      process.exit(1);
+    });
+  }
 });
 
 console.log('server listening at 8080');
