@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:11-alpine
 MAINTAINER info@vizzuality.com
 
 ENV NAME rw-lp
@@ -8,7 +8,7 @@ RUN apk update && apk upgrade && apk add --no-cache --update bash git
 
 RUN addgroup $USER && adduser -s /bin/bash -D -G $USER $USER
 
-RUN yarn global add bower gulp pm2
+RUN yarn global add bower gulp
 
 RUN mkdir -p /opt/$NAME
 
