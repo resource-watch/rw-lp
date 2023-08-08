@@ -36,35 +36,6 @@ spec:
           env:
             - name: PORT
               value: "8080"
-            - name: LOCAL_URL
-              value: http://rw-lp.default.svc.cluster.local:8080
-            - name: CT_URL
-              valueFrom:
-                secretKeyRef:
-                  key: CT_URL
-                  name: mssecrets
-            - name: CT_TOKEN
-              valueFrom:
-                secretKeyRef:
-                  key: CT_TOKEN
-                  name: mssecrets
-            - name: FASTLY_ENABLED
-              valueFrom:
-                secretKeyRef:
-                  key: FASTLY_ENABLED
-                  name: mssecrets
-            - name: FASTLY_APIKEY
-              valueFrom:
-                secretKeyRef:
-                  key: FASTLY_APIKEY
-                  name: mssecrets
-                  optional: true
-            - name: FASTLY_SERVICEID
-              valueFrom:
-                secretKeyRef:
-                  key: FASTLY_SERVICEID
-                  name: mssecrets
-                  optional: true
           image: gfwdockerhub/rw-lp
           imagePullPolicy: Always
           livenessProbe:
