@@ -21,7 +21,6 @@ RUN cd /opt/$NAME && bower install --allow-root
 
 COPY ./app /opt/$NAME/app
 COPY ./test /opt/$NAME/test
-COPY ./microservice /opt/$NAME/microservice
 
 COPY Gruntfile.js /opt/$NAME/Gruntfile.js
 COPY gulpfile.js /opt/$NAME/gulpfile.js

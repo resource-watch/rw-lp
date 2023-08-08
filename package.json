@@ -73,6 +73,9 @@
     "nyc": "^15.0.0",
     "wiredep": "^2.2.2"
   },
+  "resolutions": {
+    "graceful-fs": "^4.2.11"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
